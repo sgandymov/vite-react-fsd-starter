@@ -1,141 +1,77 @@
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  Component,
+  LayoutDashboard,
+  Table,
+  type LucideIcon,
 } from "lucide-react";
+import { ArcheLogo } from "@/shared/assets/icons";
+
+export interface SubNavItem {
+  titleKey?: string;
+  title: string;
+  url: string;
+}
+
+export interface NavMainItem {
+  titleKey?: string;
+  title: string;
+  url?: string;
+  icon?: LucideIcon;
+  isActive?: boolean;
+  items?: SubNavItem[];
+}
 
 export const sidebarData = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+  company: {
+    name: "Arche UI",
+    plan: "Built with FSD",
+    logo: ArcheLogo,
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
+  user: {
+    name: "Admin",
+    email: "admin@example.com",
+    avatar: "/avatars/admin.jpg",
+  },
   navMain: [
     {
-      titleKey: "nav.playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
+      titleKey: "nav.dashboard",
+      title: "Dashboard",
+      url: "/",
+      icon: LayoutDashboard,
+    },
+    {
+      titleKey: "nav.tables",
+      title: "Tables",
+      url: "/tables",
+      icon: Table,
+    },
+    {
+      titleKey: "nav.uiElements",
+      title: "UI Elements",
+      icon: Component,
+      isActive: false,
       items: [
         {
-          titleKey: "nav.history",
-          url: "#",
+          titleKey: "nav.buttons",
+          title: "Buttons",
+          url: "/ui/buttons",
         },
         {
-          titleKey: "nav.starred",
-          url: "#",
+          titleKey: "nav.forms",
+          title: "Forms",
+          url: "/ui/forms",
         },
         {
-          titleKey: "nav.settings",
-          url: "#",
+          titleKey: "nav.cards",
+          title: "Cards",
+          url: "/ui/cards",
+        },
+        {
+          titleKey: "nav.modals",
+          title: "Modals",
+          url: "/ui/modals",
         },
       ],
     },
-    {
-      titleKey: "nav.models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          titleKey: "nav.genesis",
-          url: "#",
-        },
-        {
-          titleKey: "nav.explorer",
-          url: "#",
-        },
-        {
-          titleKey: "nav.quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      titleKey: "nav.documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          titleKey: "nav.introduction",
-          url: "#",
-        },
-        {
-          titleKey: "nav.getStarted",
-          url: "#",
-        },
-        {
-          titleKey: "nav.tutorials",
-          url: "#",
-        },
-        {
-          titleKey: "nav.changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      titleKey: "nav.settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          titleKey: "nav.general",
-          url: "#",
-        },
-        {
-          titleKey: "nav.team",
-          url: "#",
-        },
-        {
-          titleKey: "nav.billing",
-          url: "#",
-        },
-        {
-          titleKey: "nav.limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      nameKey: "projects.designEngineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      nameKey: "projects.salesMarketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      nameKey: "projects.travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+  ] as NavMainItem[],
 };

@@ -5,6 +5,13 @@
   },
   "sidebar": {
     "nav": {
+      "dashboard": "Dashboard",
+      "tables": "Tables",
+      "uiElements": "UI Elements",
+      "buttons": "Buttons",
+      "forms": "Forms",
+      "cards": "Cards",
+      "modals": "Modals",
       "playground": "Playground",
       "history": "History",
       "starred": "Starred",
@@ -30,9 +37,7 @@
       "travel": "Travel",
       "more": "More"
     },
-    "platform": "Platform",
-    "switchTeam": "Switch team",
-    "searchTeam": "Search team..."
+    "platform": "Platform"
   },
   "header": {
     "account": "Account",
