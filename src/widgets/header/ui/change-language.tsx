@@ -21,9 +21,9 @@ export function ChangeLanguage() {
       </SelectTrigger>
       <SelectContent position="popper">
         <SelectGroup>
-          <SelectItem value="en">EN</SelectItem>
-          <SelectItem value="ru">RU</SelectItem>
-          <SelectItem value="tk">TK</SelectItem>
+          <SelectItem value="en">English</SelectItem>
+          <SelectItem value="ru">Русский</SelectItem>
+          <SelectItem value="tk">Türkmençe</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
