@@ -5,6 +5,13 @@
   },
   "sidebar": {
     "nav": {
+      "dashboard": "Dolandyryş paneli",
+      "tables": "Tablisalar",
+      "uiElements": "UI Elementler",
+      "buttons": "Düwmeler",
+      "forms": "Formalar",
+      "cards": "Kartlar",
+      "modals": "Modallar",
       "playground": "Oýun meýdançasy",
       "history": "Taryh",
       "starred": "Ýyldyzly",
@@ -30,9 +37,7 @@
       "travel": "Syýahat",
       "more": "Köpräk"
     },
-    "platform": "Platforma",
-    "switchTeam": "Topary çalyş",
-    "searchTeam": "Topar gözle..."
+    "platform": "Platforma"
   },
   "header": {
     "account": "Hasap",

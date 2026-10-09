@@ -1,8 +1,8 @@
 import { SidebarInset, SidebarProvider } from "@/shared/ui/sidebar";
 import { TooltipProvider } from "@/shared/ui/tooltip";
-import { AppSidebar } from "@/widgets/sidebar/ui/app-sidebar";
+import { AppSidebar } from "@/widgets/sidebar";
 import { Outlet } from "react-router";
-import { Header } from "@/widgets/header/ui/header";
+import { Header } from "@/widgets/header";
 
 export function RootLayout() {
   return (

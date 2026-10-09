@@ -5,6 +5,13 @@
   },
   "sidebar": {
     "nav": {
+      "dashboard": "Панель управления",
+      "tables": "Таблицы",
+      "uiElements": "Элементы UI",
+      "buttons": "Кнопки",
+      "forms": "Формы",
+      "cards": "Карточки",
+      "modals": "Модальные окна",
       "playground": "Площадка",
       "history": "История",
       "starred": "Избранное",
@@ -30,9 +37,7 @@
       "travel": "Путешествия",
       "more": "Ещё"
     },
-    "platform": "Платформа",
-    "switchTeam": "Сменить команду",
-    "searchTeam": "Поиск команды..."
+    "platform": "Платформа"
   },
   "header": {
     "account": "Аккаунт",
