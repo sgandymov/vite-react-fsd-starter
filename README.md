@@ -117,7 +117,7 @@ src/
 
 **Selim Gandymov**
 
-- GitHub: [@Selimmyrat](https://github.com/Selimmyrat)
+- GitHub: [@Selimmyrat](https://github.com/sgandymov)
 
 ---
 
