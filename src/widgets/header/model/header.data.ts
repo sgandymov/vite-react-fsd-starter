@@ -6,6 +6,6 @@ export interface HeaderUser {
 
 export const headerUserData: HeaderUser = {
    name: "Selim Gandymov",
-   email: "selim.gandymov@arche.dev",
+   email: "selim.gandymov@example.com",
    avatar: "",
 };

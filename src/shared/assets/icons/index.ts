@@ -1,1 +1,1 @@
-export { ArcheLogo, ArcheLayersLogo } from "./arche-logo";
+export { AppLogo } from "./app-logo";

@@ -1,5 +1,5 @@
 import { KeyRound, LayoutDashboard, type LucideIcon } from "lucide-react";
-import { ArcheLogo } from "@/shared/assets/icons";
+import { AppLogo } from "@/shared/assets/icons";
 
 export interface SubNavItem {
    titleKey?: string;
@@ -18,9 +18,9 @@ export interface NavMainItem {
 
 export const sidebarData = {
    company: {
-      name: "Arche Admin",
-      plan: "Vite + FSD Starter",
-      logo: ArcheLogo,
+      name: "FSD Admin",
+      plan: "Vite + React Starter",
+      logo: AppLogo,
    },
    navMain: [
       {

@@ -40,7 +40,7 @@ export function LoginForm({
                      <Input
                         id="email"
                         type="email"
-                        defaultValue="selim.gandymov@arche.dev"
+                        defaultValue="selim.gandymov@example.com"
                         placeholder="admin@example.com"
                         className="h-10 pl-9"
                         required
@@ -96,10 +96,6 @@ export function LoginForm({
                <ArrowRight className="size-4" />
             </Button>
          </form>
-
-         <div className="bg-muted/50 text-muted-foreground rounded-lg border px-3.5 py-2.5 text-xs leading-relaxed">
-            {t("demoHint")}
-         </div>
       </div>
    );
 }
