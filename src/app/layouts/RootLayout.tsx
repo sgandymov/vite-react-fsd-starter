@@ -5,17 +5,17 @@ import { Outlet } from "react-router";
 import { Header } from "@/widgets/header";
 
 export function RootLayout() {
-  return (
-    <SidebarProvider>
-      <TooltipProvider>
-        <AppSidebar />
-        <SidebarInset>
-          <Header />
-          <main>
-            <Outlet />
-          </main>
-        </SidebarInset>
-      </TooltipProvider>
-    </SidebarProvider>
-  );
+   return (
+      <SidebarProvider>
+         <TooltipProvider>
+            <AppSidebar />
+            <SidebarInset>
+               <Header />
+               <main className="flex-1">
+                  <Outlet />
+               </main>
+            </SidebarInset>
+         </TooltipProvider>
+      </SidebarProvider>
+   );
 }

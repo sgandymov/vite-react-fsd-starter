@@ -1,49 +1,58 @@
 {
-  "common": {
-    "language": "Turkmen",
-    "notFound": "Sahypa tapylmady"
-  },
-  "sidebar": {
-    "nav": {
-      "dashboard": "Dolandyryş paneli",
-      "tables": "Tablisalar",
-      "uiElements": "UI Elementler",
-      "buttons": "Düwmeler",
-      "forms": "Formalar",
-      "cards": "Kartlar",
-      "modals": "Modallar",
-      "playground": "Oýun meýdançasy",
-      "history": "Taryh",
-      "starred": "Ýyldyzly",
-      "settings": "Sazlamalar",
-      "models": "Modeller",
-      "genesis": "Genesis",
-      "explorer": "Gözlegçi",
-      "quantum": "Kwant",
-      "documentation": "Resminamalar",
-      "introduction": "Giriş",
-      "getStarted": "Başla",
-      "tutorials": "Sapaklar",
-      "changelog": "Üýtgeşmeler",
-      "general": "Umumy",
-      "team": "Topar",
-      "billing": "Töleg",
-      "limits": "Çäkler"
-    },
-    "projects": {
-      "label": "Taslamalar",
-      "designEngineering": "Dizaýn inženerçiligi",
-      "salesMarketing": "Satuw we marketing",
-      "travel": "Syýahat",
-      "more": "Köpräk"
-    },
-    "platform": "Platforma"
-  },
-  "header": {
-    "account": "Hasap",
-    "billing": "Töleg",
-    "logOut": "Çykmak",
-    "upgrade": "Pro-a geç",
-    "notifications": "Bildirişler"
-  }
+   "common": {
+      "language": "Türkmençe",
+      "notFound": "Sahypa tapylmady",
+      "notFoundDesc": "Gözleýän sahypaňyz ýok ýa-da başga ýere geçirildi.",
+      "backToDashboard": "Dolandyryş paneline gaýt"
+   },
+   "sidebar": {
+      "nav": {
+         "dashboard": "Dolandyryş paneli",
+         "loginDemo": "Giriş (UI)"
+      },
+      "platform": "Nawigasiýa"
+   },
+   "header": {
+      "routes": {
+         "dashboard": "Dolandyryş paneli",
+         "login": "Giriş"
+      },
+      "theme": {
+         "label": "Tema",
+         "light": "Ýagty",
+         "dark": "Garaňky",
+         "system": "Ulgamlaýyn"
+      },
+      "language": {
+         "label": "Dil saýlamak"
+      },
+      "account": "Profil",
+      "notifications": "Bildirişler",
+      "logOut": "Giriş sahypasy"
+   },
+   "dashboard": {
+      "title": "Dolandyryş paneli",
+      "subtitle": "Feature-Sliced Design (FSD) esasynda düzülen arassa admin panel şablony.",
+      "architecture": {
+         "title": "FSD Arhitektura Gatlaklary",
+         "subtitle": "app gatlagyndan shared gatlagyna çenli berk bir ugra baglylyk.",
+         "layers": {
+            "app": "Prowaýderler, marşrutizasiýa, global maketler we stiller",
+            "pages": "Widjetlerden we funksiýalardan düzülen sahypalar",
+            "widgets": "Özbaşdak UI bloklary (Sidebar, Header, Overview)",
+            "features": "Ulanyjy hereketleri we iş logikasy (Giriş UI)",
+            "entities": "Biznes modelleri we domen gatlagy",
+            "shared": "Gaýtadan ulanylýan UI komponentler, i18n, tema we kömekçiler"
+         }
+      }
+   },
+   "auth": {
+      "title": "Hoş geldiňiz",
+      "subtitle": "Dolandyryş panelini görmek üçin dowam ediň",
+      "emailLabel": "Email",
+      "passwordLabel": "Açar sözi",
+      "forgotPassword": "Açar sözüni unutdyňyzmy?",
+      "submitButton": "Panele geç",
+      "demoHint": "Backend awtorizasiýasy birikdirilmedik. Düwmä basylanda göni dolandyryş paneline geçýär."
+   }
 }

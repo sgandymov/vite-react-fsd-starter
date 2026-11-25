@@ -1,159 +1,88 @@
-# 🚀 Vite React FSD Starter
+# ⚡ Vite + React 19 + FSD Admin Panel Starter
 
-Modern **production-ready React starter** built with **Vite** and **Feature-Sliced Design (FSD)** architecture.
+A clean, production-ready **Admin Panel Starter Template** built with **Vite 8**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **shadcn/ui**, and strict **Feature-Sliced Design (FSD)** architecture.
 
-Designed for scalability, clean code, and best development experience.
-
----
-
-## ✨ Features
-
-* ⚡ **Vite** — fast development & build
-* ⚛️ **React 19**
-* 🧠 **Feature-Sliced Design (FSD)** architecture
-* 🌐 **i18n (react-i18next)** — multi-language support
-* 🎨 **TailwindCSS v4** — modern styling
-* 🧩 **shadcn/ui + Radix UI** — accessible UI components
-* 🔄 **TanStack Query** — server state management
-* 📡 **Axios** — API layer with interceptors
-* 🌓 **Theme Provider** — dark/light mode support
-* 🌍 **Language Switcher**
-* 📚 **Sidebar Layout + Header**
-* 🧪 ESLint + TypeScript setup
+Built as a lightweight, zero-bloat foundation for teams and developers who want a scalable admin dashboard structure without coupled backend/auth boilerplate.
 
 ---
 
-## 📦 Installation
+## ✨ Highlights
+
+- 🧠 **Strict Feature-Sliced Design (FSD)** — Clear separation of concerns (`app` → `pages` → `widgets` → `features` → `entities` → `shared`) with public API barrel exports (`index.ts`).
+- ⚛️ **React 19 + Vite 8 + TypeScript** — Fast HMR, route-level lazy code splitting, and strict type checking.
+- 🎨 **Tailwind CSS v4 + shadcn/ui + Radix UI** — Only the essential, actively used UI primitives included (`Sidebar`, `Card`, `Badge`, `DropdownMenu`, `Sheet`, `Tooltip`, `Collapsible`).
+- 🌓 **Theme Engine (`Light` / `Dark` / `System`)** — Persisted theme context with automatic OS color-scheme synchronization and animated header switcher.
+- 🌐 **Multi-Language (i18n)** — Pre-configured `react-i18next` with English (`EN`), Russian (`RU`), and Turkmen (`TK`) locales and a compact header selector.
+- 🧩 **Minimal & Focused Starter Pages**:
+   - **Dashboard (`/`)** — Full-width workspace layout with an interactive FSD layer architecture reference grid.
+   - **Login UI (`/login`)** — Modern 2-column split enterprise authentication screen ready to wire up to any auth provider.
+   - **404 Not Found (`*`)** — Graceful fallback route.
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/Selimmyrat/vite-react-fsd-starter
+# 1. Clone the repository
+git clone https://github.com/Selimmyrat/vite-react-fsd-starter.git
 cd vite-react-fsd-starter
+
+# 2. Install dependencies
 npm install
+
+# 3. Start the development server
 npm run dev
 ```
 
+### Available Scripts
+
+| Command           | Description                                                 |
+| :---------------- | :---------------------------------------------------------- |
+| `npm run dev`     | Start local Vite dev server with HMR                        |
+| `npm run build`   | Run TypeScript check (`tsc -b`) and build production bundle |
+| `npm run lint`    | Run ESLint across all `.ts` and `.tsx` files                |
+| `npm run preview` | Preview the production build locally                        |
+
 ---
 
-## 📁 Project Structure (FSD)
+## 🏛️ Feature-Sliced Design (FSD) Structure
 
-```
+In Feature-Sliced Design, modules on a layer can **only import from layers strictly below them**:
+
+`app` → `pages` → `widgets` → `features` → `entities` → `shared`
+
+```text
 src/
- ├── app/        # app providers, routing
- ├── pages/      # pages
- ├── widgets/    # layout (sidebar, header)
- ├── features/   # user actions (auth, create, etc.)
- ├── entities/   # business entities (user, product)
- └── shared/     # reusable logic (ui, api, config)
+├── app/                        # Layer 1: App initialization, providers, layouts, router, global CSS
+│   ├── layouts/                # RootLayout (Sidebar + Header) & AuthLayout
+│   ├── router/                 # Route definitions with React.lazy Suspense
+│   ├── styles/                 # Tailwind v4 & CSS variables
+│   └── index.tsx               # Root App component
+│
+├── pages/                      # Layer 2: Route-level pages
+│   ├── home/                   # Dashboard overview page (/)
+│   ├── login/                  # Split-screen login UI page (/login)
+│   └── not-found/              # 404 fallback page (*)
+│
+├── widgets/                    # Layer 3: Self-contained composite UI blocks
+│   ├── header/                 # Sticky top bar (ui + model/header.data.ts)
+│   ├── sidebar/                # Collapsible navigation sidebar (ui + model/sidebar.data.ts)
+│   └── dashboard-overview/     # FSD architecture reference grid widget
+│
+├── features/                   # Layer 4: User interactions & business actions
+│   └── auth/                   # LoginForm UI component with password visibility toggle
+│
+├── entities/                   # Layer 5: Business domain models & entity UI (ready for your domain slices)
+│
+└── shared/                     # Layer 6: Reusable infrastructure & UI kit
+    ├── assets/                 # Brand logos & SVG icons
+    ├── config/                 # ThemeProvider (light/dark/system) & i18n setup (en, ru, tk)
+    ├── lib/                    # Hooks (useIsMobile) & class utilities (cn)
+    └── ui/                     # Essential shadcn/ui primitives
 ```
-
----
-
-## 🧠 Architecture
-
-This project follows **Feature-Sliced Design (FSD)** methodology:
-
-* **shared** → reusable utilities, UI, configs
-* **entities** → business models & data
-* **features** → user interactions
-* **widgets** → layout blocks (sidebar, header)
-* **pages** → screens
-* **app** → global setup
-
----
-
-## 🌐 Internationalization (i18n)
-
-* Built with **react-i18next**
-* Language detection support
-* Easy to scale
-
-```ts
-const { t } = useTranslation();
-t("welcome");
-```
-
----
-
-## 🌓 Theme Switching
-
-* Dark / Light mode support
-* Controlled via Theme Provider
-* Easily extendable
-
----
-
-## 🔄 Data Fetching
-
-Powered by **TanStack Query + Axios**
-
-* Query caching
-* Background updates
-* API abstraction layer
-
----
-
-## 🎨 UI System
-
-* TailwindCSS v4
-* shadcn/ui components
-* Radix UI primitives
-* Utility helpers (`clsx`, `tailwind-merge`, `cva`)
-
----
-
-## 🧩 Layout
-
-* 📚 Sidebar navigation
-* 📌 Header with controls:
-
-  * Language switch
-  * Theme toggle
-
----
-
-## ⚙️ Environment Variables
-
-Create `.env` file:
-
-```env
-VITE_API_BASE_URL=https://api.example.com
-```
-
----
-
-## 🧪 Linting
-
-```bash
-npm run lint
-```
-
----
-
-## 🚀 Build
-
-```bash
-npm run build
-npm run preview
-```
-
----
-
-## 📌 Best Practices Included
-
-* ✅ FSD architecture
-* ✅ Query key factory
-* ✅ Axios instance with interceptors
-* ✅ Clean separation of concerns
-* ✅ Scalable folder structure
 
 ---
 
 ## 📄 License
 
-MIT
-
----
-
-## ⭐ Support
-
-If you like this project, consider giving it a star ⭐
+Released under the [MIT License](LICENSE). If you find this starter useful, please consider giving it a ⭐ on GitHub!

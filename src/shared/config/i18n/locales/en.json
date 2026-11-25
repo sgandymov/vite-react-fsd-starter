@@ -1,49 +1,58 @@
 {
-  "common": {
-    "language": "English",
-    "notFound": "Page not found"
-  },
-  "sidebar": {
-    "nav": {
-      "dashboard": "Dashboard",
-      "tables": "Tables",
-      "uiElements": "UI Elements",
-      "buttons": "Buttons",
-      "forms": "Forms",
-      "cards": "Cards",
-      "modals": "Modals",
-      "playground": "Playground",
-      "history": "History",
-      "starred": "Starred",
-      "settings": "Settings",
-      "models": "Models",
-      "genesis": "Genesis",
-      "explorer": "Explorer",
-      "quantum": "Quantum",
-      "documentation": "Documentation",
-      "introduction": "Introduction",
-      "getStarted": "Get Started",
-      "tutorials": "Tutorials",
-      "changelog": "Changelog",
-      "general": "General",
-      "team": "Team",
-      "billing": "Billing",
-      "limits": "Limits"
-    },
-    "projects": {
-      "label": "Projects",
-      "designEngineering": "Design Engineering",
-      "salesMarketing": "Sales & Marketing",
-      "travel": "Travel",
-      "more": "More"
-    },
-    "platform": "Platform"
-  },
-  "header": {
-    "account": "Account",
-    "billing": "Billing",
-    "logOut": "Log out",
-    "upgrade": "Upgrade to Pro",
-    "notifications": "Notifications"
-  }
+   "common": {
+      "language": "English",
+      "notFound": "Page not found",
+      "notFoundDesc": "The page you are looking for doesn't exist or has been moved.",
+      "backToDashboard": "Back to Dashboard"
+   },
+   "sidebar": {
+      "nav": {
+         "dashboard": "Dashboard",
+         "loginDemo": "Login UI"
+      },
+      "platform": "Navigation"
+   },
+   "header": {
+      "routes": {
+         "dashboard": "Dashboard",
+         "login": "Login"
+      },
+      "theme": {
+         "label": "Theme",
+         "light": "Light",
+         "dark": "Dark",
+         "system": "System"
+      },
+      "language": {
+         "label": "Language"
+      },
+      "account": "Profile",
+      "notifications": "Notifications",
+      "logOut": "Login UI Demo"
+   },
+   "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Clean Feature-Sliced Design (FSD) admin starter template.",
+      "architecture": {
+         "title": "FSD Architecture Layers",
+         "subtitle": "Strict unidirectional dependency flow from app down to shared.",
+         "layers": {
+            "app": "Providers, router setup, global layouts & CSS",
+            "pages": "Route-level screens composed of widgets & features",
+            "widgets": "Self-contained UI blocks (Sidebar, Header, Overview)",
+            "features": "User interactions & business actions (Auth UI)",
+            "entities": "Business domain models & entity UI slices",
+            "shared": "Reusable UI kit, i18n, theme & utility helpers"
+         }
+      }
+   },
+   "auth": {
+      "title": "Welcome back",
+      "subtitle": "Enter your credentials to preview the dashboard",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password?",
+      "submitButton": "Continue to Dashboard",
+      "demoHint": "No backend authentication is attached. Submitting navigates directly to the Admin Dashboard."
+   }
 }

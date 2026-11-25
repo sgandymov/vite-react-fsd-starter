@@ -1,102 +1,93 @@
-"use client";
-
-import {
-  BadgeCheck,
-  Bell,
-  ChevronsUpDown,
-  CreditCard,
-  LogOut,
-  Sparkles,
-} from "lucide-react";
+import { BadgeCheck, Bell, LogOut } from "lucide-react";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/shared/ui/avatar";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+   DropdownMenu,
+   DropdownMenuContent,
+   DropdownMenuGroup,
+   DropdownMenuItem,
+   DropdownMenuLabel,
+   DropdownMenuSeparator,
+   DropdownMenuTrigger,
 } from "@/shared/ui/dropdown-menu";
-import { SidebarMenuButton } from "@/shared/ui/sidebar";
+import type { HeaderUser } from "../model/header.data";
 
-export function NavUser({
-  user,
-}: {
-  user: {
-    name: string;
-    email: string;
-    avatar: string;
-  };
-}) {
-  const { t } = useTranslation("header");
+function getInitials(name: string) {
+   return name
+      .split(" ")
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase()
+      .slice(0, 2);
+}
 
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <SidebarMenuButton
-          size="lg"
-          className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-        >
-          <Avatar className="h-8 w-8 rounded-lg">
-            <AvatarImage src={user.avatar} alt={user.name} />
-            <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-          </Avatar>
-          <div className="grid flex-1 text-left text-sm leading-tight">
-            <span className="truncate font-medium">{user.name}</span>
-            <span className="truncate text-xs">{user.email}</span>
-          </div>
-          <ChevronsUpDown className="ml-auto size-4" />
-        </SidebarMenuButton>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent
-        className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
-        side="bottom"
-        align="end"
-        sideOffset={4}
-      >
-        <DropdownMenuLabel className="p-0 font-normal">
-          <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-            <Avatar className="h-8 w-8 rounded-lg">
-              <AvatarImage src={user.avatar} alt={user.name} />
-              <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-            </Avatar>
-            <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-medium">{user.name}</span>
-              <span className="truncate text-xs">{user.email}</span>
-            </div>
-          </div>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Sparkles />
-            {t("upgrade")}
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <BadgeCheck />
-            {t("account")}
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard />
-            {t("billing")}
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Bell />
-            {t("notifications")}
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut />
-          {t("logOut")}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
+export function NavUser({ user }: { user: HeaderUser }) {
+   const { t } = useTranslation("header");
+   const navigate = useNavigate();
+   const initials = getInitials(user.name);
+
+   return (
+      <DropdownMenu>
+         <DropdownMenuTrigger asChild>
+            <button
+               type="button"
+               aria-label={user.name}
+               className="focus-visible:ring-ring/50 group relative inline-flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-full outline-none transition-transform active:scale-95 focus-visible:ring-2"
+            >
+               <Avatar className="border-border group-hover:border-foreground/25 size-8 rounded-full border transition-colors">
+                  <AvatarImage src={user.avatar} alt={user.name} />
+                  <AvatarFallback className="bg-muted text-foreground text-[11px] font-semibold tracking-tight">
+                     {initials}
+                  </AvatarFallback>
+               </Avatar>
+            </button>
+         </DropdownMenuTrigger>
+         <DropdownMenuContent
+            className="w-56 rounded-xl p-1.5"
+            side="bottom"
+            align="end"
+            sideOffset={8}
+         >
+            <DropdownMenuLabel className="p-0 font-normal">
+               <div className="flex items-center gap-2.5 px-2 py-2 text-left text-sm">
+                  <Avatar className="border-border size-8 rounded-full border">
+                     <AvatarImage src={user.avatar} alt={user.name} />
+                     <AvatarFallback className="bg-muted text-foreground text-xs font-semibold">
+                        {initials}
+                     </AvatarFallback>
+                  </Avatar>
+                  <div className="grid flex-1 text-left leading-tight">
+                     <span className="truncate text-xs font-semibold">
+                        {user.name}
+                     </span>
+                     <span className="text-muted-foreground truncate text-[11px]">
+                        {user.email}
+                     </span>
+                  </div>
+               </div>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator className="my-1" />
+            <DropdownMenuGroup>
+               <DropdownMenuItem className="cursor-pointer rounded-lg px-2.5 py-1.5 text-xs font-medium">
+                  <BadgeCheck className="text-muted-foreground size-3.5" />
+                  {t("account")}
+               </DropdownMenuItem>
+               <DropdownMenuItem className="cursor-pointer rounded-lg px-2.5 py-1.5 text-xs font-medium">
+                  <Bell className="text-muted-foreground size-3.5" />
+                  {t("notifications")}
+               </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator className="my-1" />
+            <DropdownMenuItem
+               onClick={() => navigate("/login")}
+               className="cursor-pointer rounded-lg px-2.5 py-1.5 text-xs font-medium"
+            >
+               <LogOut className="text-muted-foreground size-3.5" />
+               {t("logOut")}
+            </DropdownMenuItem>
+         </DropdownMenuContent>
+      </DropdownMenu>
+   );
 }

@@ -1,49 +1,58 @@
 {
-  "common": {
-    "language": "Русский",
-    "notFound": "Страница не найдена"
-  },
-  "sidebar": {
-    "nav": {
-      "dashboard": "Панель управления",
-      "tables": "Таблицы",
-      "uiElements": "Элементы UI",
-      "buttons": "Кнопки",
-      "forms": "Формы",
-      "cards": "Карточки",
-      "modals": "Модальные окна",
-      "playground": "Площадка",
-      "history": "История",
-      "starred": "Избранное",
-      "settings": "Настройки",
-      "models": "Модели",
-      "genesis": "Генезис",
-      "explorer": "Проводник",
-      "quantum": "Квант",
-      "documentation": "Документация",
-      "introduction": "Введение",
-      "getStarted": "Начать",
-      "tutorials": "Уроки",
-      "changelog": "Изменения",
-      "general": "Общие",
-      "team": "Команда",
-      "billing": "Оплата",
-      "limits": "Лимиты"
-    },
-    "projects": {
-      "label": "Проекты",
-      "designEngineering": "Дизайн-инженерия",
-      "salesMarketing": "Продажи и маркетинг",
-      "travel": "Путешествия",
-      "more": "Ещё"
-    },
-    "platform": "Платформа"
-  },
-  "header": {
-    "account": "Аккаунт",
-    "billing": "Оплата",
-    "logOut": "Выйти",
-    "upgrade": "Перейти на Pro",
-    "notifications": "Уведомления"
-  }
+   "common": {
+      "language": "Русский",
+      "notFound": "Страница не найдена",
+      "notFoundDesc": "Запрашиваемая страница не существует или была перемещена.",
+      "backToDashboard": "Вернуться на главную"
+   },
+   "sidebar": {
+      "nav": {
+         "dashboard": "Дашборд",
+         "loginDemo": "Вход (UI)"
+      },
+      "platform": "Навигация"
+   },
+   "header": {
+      "routes": {
+         "dashboard": "Дашборд",
+         "login": "Вход"
+      },
+      "theme": {
+         "label": "Тема оформления",
+         "light": "Светлая",
+         "dark": "Тёмная",
+         "system": "Системная"
+      },
+      "language": {
+         "label": "Язык интерфейса"
+      },
+      "account": "Профиль",
+      "notifications": "Уведомления",
+      "logOut": "Страница входа"
+   },
+   "dashboard": {
+      "title": "Панель управления",
+      "subtitle": "Чистый стартовый шаблон админ-панели на базе Feature-Sliced Design (FSD).",
+      "architecture": {
+         "title": "Слои архитектуры FSD",
+         "subtitle": "Строгий однонаправленный поток зависимостей от app к shared.",
+         "layers": {
+            "app": "Провайдеры, роутинг, глобальные лейауты и стили",
+            "pages": "Страницы приложения, собранные из виджетов и фич",
+            "widgets": "Самостоятельные блоки интерфейса (Sidebar, Header)",
+            "features": "Действия пользователя и бизнес-логика (Auth UI)",
+            "entities": "Бизнес-сущности и доменные модели данных",
+            "shared": "Переиспользуемый UI-кит, i18n, тема и утилиты"
+         }
+      }
+   },
+   "auth": {
+      "title": "С возвращением",
+      "subtitle": "Введите данные для перехода в панель управления",
+      "emailLabel": "Email",
+      "passwordLabel": "Пароль",
+      "forgotPassword": "Забыли пароль?",
+      "submitButton": "Перейти в дашборд",
+      "demoHint": "Авторизация на бэкенде отключена. Нажатие кнопки сразу открывает дашборд."
+   }
 }
